@@ -8,7 +8,7 @@ describe('Loader', () => {
     expect(output).toMatchSnapshot()
   })
 
-  test('Replaces all urls in the sass file', async () => {
+  test('Replaces all urls in the scss file', async () => {
     const stats = await compiler(path.join(__dirname, './fixtures/styles.scss'), { scss: true })
     const output = stats.toJson().modules.slice(-1)[0].source
     expect(output).toMatchSnapshot()

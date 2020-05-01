@@ -83,7 +83,7 @@ span {
 \`"
 `;
 
-exports[`Loader Replaces all urls in the sass file 1`] = `
+exports[`Loader Replaces all urls in the scss file 1`] = `
 "
 import postcssStyledJsxUrlLoader_0 from './image.png';
 import css from 'styled-jsx/css';

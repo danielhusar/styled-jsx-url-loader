@@ -1,18 +1,7 @@
-// import { getOptions } from 'loader-utils'
-
-// export default function loader(source) {
-//   const options = getOptions(this)
-
-//   source = source.replace(/\[name\]/g, options.name)
-
-//   return `export default ${JSON.stringify(source)}`
-// }
-
 const { getOptions } = require('loader-utils')
 const postcss = require('postcss')
 const asyncReplace = require('async-replace-promise')
 const isAbsoluteUrl = require('is-absolute-url')
-const postcssSass = require('postcss-sass')
 const postcssScss = require('postcss-scss')
 
 module.exports = async function (content) {
@@ -63,7 +52,6 @@ module.exports = async function (content) {
   })
 
   const postcssOptions = { map: false, from: this.resourcePath }
-  if (options.sass) postcssOptions.syntax = postcssSass
   if (options.scss) postcssOptions.syntax = postcssScss
 
   const processed = await asyncReplace(

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/danielhusar/styled-jsx-url-loader.svg?branch=master)](https://travis-ci.org/danielhusar/styled-jsx-url-loader) [![npm version](https://badge.fury.io/js/styled-jsx-url-loader.svg)](https://www.npmjs.com/package/styled-jsx-url-loader)
 
-> Loader to transform `url()` into es6 imports for css/sass style that are used alongside the styled-jsx/webpack loader.
+> Loader to transform `url()` into es6 imports for css/sass style that are used alongside the styled-jsx/webpack loader. This is similar to what css loader does, but css loader is incompatible with styled-jsx/webpack loader.
 
 ## Installation
 
@@ -47,25 +47,33 @@ config.module.rules.push({
 #### scss
 
 Type: `Boolean`
+
 Default: false
-Allow parting scss code. (It will not transform scss to css)
+
+Allow parsing scss code. (It will not transform scss to css)
 
 #### exclude
 
 Type: `string|regexp`
+
 Default: null
+
 Exclude urls from transformations.
 
 #### exclude
 
 Type: `string|regexp`
+
 Default: null
+
 Exclude urls from transformations.
 
 #### debug
 
 Type: `boolean`
+
 Default: false
+
 Print debug messages.
 
 ## Caveats

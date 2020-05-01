@@ -25,7 +25,7 @@ module.exports = async function (content) {
               if (isAbsoluteUrl(url)) {
                 return args[0]
               }
-              if (url.match('postcssStyledJsxUrlLoader')) {
+              if (url.match('postcssStyledJsxUrlLoader_')) {
                 return args[0]
               }
               if (options.exclude && url.match(options.exclude)) {

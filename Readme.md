@@ -54,7 +54,7 @@ Allow parsing scss code.\
 
 #### exclude
 
-Type: `String|Regexp`\
+Type: `String|RegExp`\
 Default: `null`
 
 Exclude urls from transformations.

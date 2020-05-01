@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/danielhusar/styled-jsx-url-loader.svg?branch=master)](https://travis-ci.org/danielhusar/styled-jsx-url-loader) [![npm version](https://badge.fury.io/js/styled-jsx-url-loader.svg)](https://www.npmjs.com/package/styled-jsx-url-loader)
 
-> Loader to transform `url()` into es6 imports for css/sass style that are used alongside the styled-jsx/webpack loader. This is similar to what css loader does, but css loader is incompatible with styled-jsx/webpack loader.
+> Webpack loader to transform `url()` inside the css or sass when using [separate files to create styled-jsx styles](https://github.com/zeit/styled-jsx#styles-in-regular-css-files). This loader needs to be used together with styled-jsx/webpack loader. It's similar to what css-loader does, but css-loader is incompatible with styled-jsx/webpack loader.
 
 ## Installation
 
@@ -20,8 +20,8 @@ npm install styled-jsx-url-loader --dev
 
 ## Configuration
 
-This loader should be executed right after `styled-jsx/webpack` and before babel loader.
-Since loaders are executed from last to first, usage is like (with next.js):
+This loader should be executed right after `styled-jsx/webpack` and before babel loader.\
+Since loaders are executed from last to first, usage can be like this (with next.js):
 
 ```js
 config.module.rules.push({

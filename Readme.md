@@ -46,33 +46,23 @@ config.module.rules.push({
 
 #### scss
 
-Type: `Boolean`
+Type: `Boolean`\
+Default: `false`
 
-Default: false
-
-Allow parsing scss code. (It will not transform scss to css)
-
-#### exclude
-
-Type: `string|regexp`
-
-Default: null
-
-Exclude urls from transformations.
+Allow parsing scss code.\
+(It will not transform scss to css, only allow parser to parse it)
 
 #### exclude
 
-Type: `string|regexp`
-
-Default: null
+Type: `String|Regexp`\
+Default: `null`
 
 Exclude urls from transformations.
 
 #### debug
 
-Type: `boolean`
-
-Default: false
+Type: `Boolean`\
+Default: `false`
 
 Print debug messages.
 

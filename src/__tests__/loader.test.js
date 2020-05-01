@@ -29,7 +29,7 @@ describe('Loader', () => {
       await compiler(path.join(__dirname, './fixtures/invalid.scss'), { scss: true, debug: true })
     } catch {
       expect(console.warn).toHaveBeenCalledWith(
-        'styled-jsx-url-loader: Urls inside variables are not supported',
+        'styled-jsx-url-loader: Sass variables as urls are not supported',
       )
       console.warn.mockReset()
     }

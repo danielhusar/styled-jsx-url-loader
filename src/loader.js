@@ -33,7 +33,7 @@ module.exports = async function (content) {
               }
               if (options.debug) {
                 if (options.scss && url.startsWith('$')) {
-                  console.warn('styled-jsx-url-loader: Urls inside variables are not supported')
+                  console.warn('styled-jsx-url-loader: Sass variables as urls are not supported')
                 } else {
                   console.log(`styled-jsx-url-loader: Found ${url}`)
                 }

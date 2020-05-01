@@ -31,8 +31,12 @@ module.exports = async function (content) {
               if (options.exclude && url.match(options.exclude)) {
                 return args[0]
               }
-              if (options.debug && (options.sass || options.scss) && url.startsWith('$')) {
-                console.warn('styled-jsx-url-loader: Urls inside variables are not supported')
+              if (options.debug) {
+                if (options.scss && url.startsWith('$')) {
+                  console.warn('styled-jsx-url-loader: Urls inside variables are not supported')
+                } else {
+                  console.log(`styled-jsx-url-loader: Found ${url}`)
+                }
               }
               if (!url.startsWith('.') && !url.startsWith('/')) {
                 url = `./${url}`

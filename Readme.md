@@ -1,0 +1,79 @@
+# styled-jsx-url-loader
+
+[![Build Status](https://travis-ci.org/danielhusar/styled-jsx-url-loader.svg?branch=master)](https://travis-ci.org/danielhusar/styled-jsx-url-loader) [![npm version](https://badge.fury.io/js/styled-jsx-url-loader.svg)](https://www.npmjs.com/package/styled-jsx-url-loader)
+
+> Loader to transform `url()` into es6 imports for css/sass style that are used alongside the styled-jsx/webpack loader.
+
+## Installation
+
+Using yarn:
+
+```sh
+yarn add styled-jsx-url-loader --dev
+```
+
+Or using npm:
+
+```sh
+npm install styled-jsx-url-loader --dev
+```
+
+## Configuration
+
+This loader should be executed right after `styled-jsx/webpack` and before babel loader.
+Since loaders are executed from last to first, usage is like (with next.js):
+
+```js
+config.module.rules.push({
+  test: /\.s?css$/,
+  use: [
+    options.defaultLoaders.babel,
+    {
+      loader: require('styled-jsx-url-loader'),
+      options: {},
+    },
+    {
+      loader: require('styled-jsx/webpack').loader,
+      options: {
+        type: 'scoped',
+      },
+    },
+  ],
+})
+```
+
+## Options
+
+#### scss
+
+Type: `Boolean`
+Default: false
+Allow parting scss code. (It will not transform scss to css)
+
+#### exclude
+
+Type: `string|regexp`
+Default: null
+Exclude urls from transformations.
+
+#### exclude
+
+Type: `string|regexp`
+Default: null
+Exclude urls from transformations.
+
+#### debug
+
+Type: `boolean`
+Default: false
+Print debug messages.
+
+## Caveats
+
+Sass variables inside the urls are not supported. Example: `background: url(${heroImage})`. If you need to transform them, transform your sass code first to plain css.
+
+There is no source maps support. (PR welcome)
+
+## License
+
+MIT © [Daniel Husar](https://github.com/danielhusar)

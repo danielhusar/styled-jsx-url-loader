@@ -1,0 +1,58 @@
+{
+  "name": "styled-jsx-url-loader",
+  "version": "0.1.0",
+  "author": "Daniel Husar <dano.husar@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielhusar/styled-jsx-url-loader.git"
+  },
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --detectOpenHandles"
+  },
+  "dependencies": {
+    "async-replace-promise": "^2.0.0",
+    "is-absolute-url": "^3.0.3",
+    "loader-utils": "^2.0.0",
+    "postcss": "^7.0.27",
+    "postcss-sass": "^0.4.4",
+    "postcss-scss": "^2.0.0",
+    "schema-utils": "^2.6.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-jest": "^25.5.1",
+    "babel-preset-env": "^1.7.0",
+    "husky": "^4.2.5",
+    "jest": "^25.5.3",
+    "lint-staged": "^10.2.2",
+    "memfs": "^3.1.2",
+    "prettier": "^2.0.5",
+    "styled-jsx": "^3.2.5",
+    "webpack": "^4.43.0"
+  },
+  "peerDependencies": {
+    "webpack": "^4.0.0 || ^5.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,scss,json}": [
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-loader",
+    "styled-jsx",
+    "url"
+  ]
+}

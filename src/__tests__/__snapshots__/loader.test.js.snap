@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader Replaces all urls in the css file 1`] = `
+"
+import postcssStyledJsxUrlLoader_0 from './image.png';
+import postcssStyledJsxUrlLoader_1 from './font.woff2';
+import postcssStyledJsxUrlLoader_2 from './font.woff';
+import postcssStyledJsxUrlLoader_3 from './image.png';
+import postcssStyledJsxUrlLoader_4 from './image.png';
+import postcssStyledJsxUrlLoader_5 from './image.png';
+import postcssStyledJsxUrlLoader_6 from './image.png';
+import css from 'styled-jsx/css';
+
+export default css\`header {
+  background: lightblue url(\\"\${postcssStyledJsxUrlLoader_0}\\") no-repeat fixed center;
+  src: url(\\"\${postcssStyledJsxUrlLoader_1}\\") format('woff2'),
+    url(\\"\${postcssStyledJsxUrlLoader_2}\\") format('woff');
+}
+
+footer {
+  background: url(\\"\${postcssStyledJsxUrlLoader_3}\\");
+}
+
+main {
+  background: url(\\"\${postcssStyledJsxUrlLoader_4}\\");
+}
+
+div {
+  background: url(\\"\${postcssStyledJsxUrlLoader_5}\\");
+}
+
+.class {
+  background: url(\\"\${postcssStyledJsxUrlLoader_6}\\");
+}
+
+/* .class {
+  background: url(./image.png);
+} */
+
+span {
+  background: url(\\"https://www.danielhusar.sk/image.png\\");
+}
+\`"
+`;
+
+exports[`Loader Replaces all urls in the sass file 1`] = `
+"
+import postcssStyledJsxUrlLoader_0 from './image.png';
+import css from 'styled-jsx/css';
+
+export default css\`@import 'main';
+
+main {
+  div {
+    background: url(\\"\${postcssStyledJsxUrlLoader_0}\\");
+  }
+}
+\`"
+`;

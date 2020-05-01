@@ -1,0 +1,28 @@
+header {
+  background: lightblue url('./image.png') no-repeat fixed center;
+  src: url('./font.woff2') format('woff2'), url('./font.woff') format('woff');
+}
+
+footer {
+  background: url('./image.png');
+}
+
+main {
+  background: url(./image.png);
+}
+
+div {
+  background: url(image.png);
+}
+
+.class {
+  background: url(./image.png);
+}
+
+/* .class {
+  background: url(./image.png);
+} */
+
+span {
+  background: url('https://www.danielhusar.sk/image.png');
+}

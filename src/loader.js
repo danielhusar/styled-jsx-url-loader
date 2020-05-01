@@ -29,8 +29,6 @@ module.exports = async function (content) {
     return (root) => {
       root.walkRules((rule) => {
         rule.walkDecls((decl) => {
-          console.log(decl.value)
-
           decl.value = decl.value.replace(
             /(?:url(?:\s+)?)\((?:'|")?([^(|'|"]+)(?:'|")?\)/gi,
             (...args) => {
@@ -39,6 +37,9 @@ module.exports = async function (content) {
                 return args[0]
               }
               if (url.match('postcssStyledJsxUrlLoader')) {
+                return args[0]
+              }
+              if (options.exclude && url.match(options.exclude)) {
                 return args[0]
               }
               if (options.debug && (options.sass || options.scss) && url.startsWith('$')) {
@@ -65,16 +66,19 @@ module.exports = async function (content) {
   if (options.sass) postcssOptions.syntax = postcssSass
   if (options.scss) postcssOptions.syntax = postcssScss
 
-  const processed = await asyncReplace(content, /(?:css`)([^`]+)/gi, async (...args) => {
-    const css = args[1]
-    return new Promise((resolve, reject) => {
-      postcss([replacer])
-        .process(css, postcssOptions)
-        .then((result) => resolve(`css\`${result.css}`))
-    })
-  })
-
-  console.log(`${imports}\n${processed}`)
+  const processed = await asyncReplace(
+    content,
+    /(?:css(?:\.global)?`)([^`]+)/gi,
+    async (...args) => {
+      const tag = args[0].split('`')[0]
+      const css = args[1]
+      return new Promise((resolve, reject) => {
+        postcss([replacer])
+          .process(css, postcssOptions)
+          .then((result) => resolve(`${tag}\`${result.css}`))
+      })
+    },
+  )
 
   callback(null, `${imports}\n${processed}`)
 }

@@ -1,3 +1,5 @@
+/* @styled-jsx=global */
+
 header {
   background: lightblue url('./image.png') no-repeat fixed center;
   src: url('./font.woff2') format('woff2'), url('./font.woff') format('woff');

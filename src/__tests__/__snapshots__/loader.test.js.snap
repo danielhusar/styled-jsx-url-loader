@@ -1,5 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Loader Exclude files 1`] = `
+"
+import postcssStyledJsxUrlLoader_0 from './font.woff2';
+import postcssStyledJsxUrlLoader_1 from './font.woff';
+import css from 'styled-jsx/css';
+
+export default css.global\`/* @styled-jsx=global */
+
+header {
+  background: lightblue url('./image.png') no-repeat fixed center;
+  src: url(\\"\${postcssStyledJsxUrlLoader_0}\\") format('woff2'), url(\\"\${postcssStyledJsxUrlLoader_1}\\") format('woff');
+}
+
+footer {
+  background: url('./image.png');
+}
+
+main {
+  background: url(./image.png);
+}
+
+div {
+  background: url(image.png);
+}
+
+.class {
+  background: url(./image.png);
+}
+
+/* .class {
+  background: url(./image.png);
+} */
+
+span {
+  background: url('https://www.danielhusar.sk/image.png');
+}
+\`"
+`;
+
 exports[`Loader Replaces all urls in the css file 1`] = `
 "
 import postcssStyledJsxUrlLoader_0 from './image.png';
@@ -11,10 +50,11 @@ import postcssStyledJsxUrlLoader_5 from './image.png';
 import postcssStyledJsxUrlLoader_6 from './image.png';
 import css from 'styled-jsx/css';
 
-export default css\`header {
+export default css.global\`/* @styled-jsx=global */
+
+header {
   background: lightblue url(\\"\${postcssStyledJsxUrlLoader_0}\\") no-repeat fixed center;
-  src: url(\\"\${postcssStyledJsxUrlLoader_1}\\") format('woff2'),
-    url(\\"\${postcssStyledJsxUrlLoader_2}\\") format('woff');
+  src: url(\\"\${postcssStyledJsxUrlLoader_1}\\") format('woff2'), url(\\"\${postcssStyledJsxUrlLoader_2}\\") format('woff');
 }
 
 footer {
@@ -38,7 +78,7 @@ div {
 } */
 
 span {
-  background: url(\\"https://www.danielhusar.sk/image.png\\");
+  background: url('https://www.danielhusar.sk/image.png');
 }
 \`"
 `;
@@ -48,7 +88,9 @@ exports[`Loader Replaces all urls in the sass file 1`] = `
 import postcssStyledJsxUrlLoader_0 from './image.png';
 import css from 'styled-jsx/css';
 
-export default css\`@import 'main';
+export default css\`/* @styled-jsx=scoped */
+
+@import 'main';
 
 main {
   div {

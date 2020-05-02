@@ -14,42 +14,49 @@ module.exports = async function (content) {
   let index = 0
   let imports = ''
 
+  const transformValue = (value) => {
+    return value.replace(/(?:url(?:\s+)?)\((?:'|")?([^(|'|"]+)(?:'|")?\)/gi, (...args) => {
+      let url = args[1]
+      if (isAbsoluteUrl(url)) {
+        return args[0]
+      }
+      if (url.match('postcssStyledJsxUrlLoader_')) {
+        return args[0]
+      }
+      if (options.exclude && url.match(options.exclude)) {
+        return args[0]
+      }
+      if (options.debug) {
+        if (options.scss && url.startsWith('$')) {
+          console.warn('styled-jsx-url-loader: Sass variables as urls are not supported')
+        } else {
+          console.log(`styled-jsx-url-loader: Found ${url}`)
+        }
+      }
+      if (!url.startsWith('.') && !url.startsWith('/')) {
+        url = `./${url}`
+      }
+      this.addDependency(url)
+
+      const name = `postcssStyledJsxUrlLoader_${index}`
+      const nameAsVar = '${' + name + '}'
+      imports = `${imports}\nimport ${name} from '${url}';`
+      index++
+      return `url("${nameAsVar}")`
+    })
+  }
+
   const replacer = postcss.plugin('postcss-styled-jsx-url-loader', () => {
     return (root) => {
+      root.walkAtRules('font-face', (rule) => {
+        rule.walkDecls((decl) => {
+          decl.value = transformValue(decl.value)
+        })
+      })
+
       root.walkRules((rule) => {
         rule.walkDecls((decl) => {
-          decl.value = decl.value.replace(
-            /(?:url(?:\s+)?)\((?:'|")?([^(|'|"]+)(?:'|")?\)/gi,
-            (...args) => {
-              let url = args[1]
-              if (isAbsoluteUrl(url)) {
-                return args[0]
-              }
-              if (url.match('postcssStyledJsxUrlLoader_')) {
-                return args[0]
-              }
-              if (options.exclude && url.match(options.exclude)) {
-                return args[0]
-              }
-              if (options.debug) {
-                if (options.scss && url.startsWith('$')) {
-                  console.warn('styled-jsx-url-loader: Sass variables as urls are not supported')
-                } else {
-                  console.log(`styled-jsx-url-loader: Found ${url}`)
-                }
-              }
-              if (!url.startsWith('.') && !url.startsWith('/')) {
-                url = `./${url}`
-              }
-              this.addDependency(url)
-
-              const name = `postcssStyledJsxUrlLoader_${index}`
-              const nameAsVar = '${' + name + '}'
-              imports = `${imports}\nimport ${name} from '${url}';`
-              index++
-              return `url("${nameAsVar}")`
-            },
-          )
+          decl.value = transformValue(decl.value)
         })
       })
     }

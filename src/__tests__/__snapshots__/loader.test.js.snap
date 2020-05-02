@@ -3,14 +3,33 @@
 exports[`Loader Exclude files 1`] = `
 "
 import postcssStyledJsxUrlLoader_0 from './font.woff2';
-import postcssStyledJsxUrlLoader_1 from './font.woff';
+import postcssStyledJsxUrlLoader_1 from './font.woff2';
+import postcssStyledJsxUrlLoader_2 from './font.woff2';
+import postcssStyledJsxUrlLoader_3 from './font.woff2';
 import css from 'styled-jsx/css';
 
 export default css.global\`/* @styled-jsx=global */
 
+@font-face {
+  font-family: 'Font';
+  font-display: block;
+  src: url(\\"\${postcssStyledJsxUrlLoader_0}\\") format('woff2'),
+    url(\\"\${postcssStyledJsxUrlLoader_1}\\") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Font2';
+  font-display: block;
+  src: url(\\"\${postcssStyledJsxUrlLoader_2}\\") format('woff2'),
+    url(\\"\${postcssStyledJsxUrlLoader_3}\\") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 header {
   background: lightblue url('./image.png') no-repeat fixed center;
-  src: url(\\"\${postcssStyledJsxUrlLoader_0}\\") format('woff2'), url(\\"\${postcssStyledJsxUrlLoader_1}\\") format('woff');
 }
 
 footer {
@@ -41,36 +60,55 @@ span {
 
 exports[`Loader Replaces all urls in the css file 1`] = `
 "
-import postcssStyledJsxUrlLoader_0 from './image.png';
+import postcssStyledJsxUrlLoader_0 from './font.woff2';
 import postcssStyledJsxUrlLoader_1 from './font.woff2';
-import postcssStyledJsxUrlLoader_2 from './font.woff';
-import postcssStyledJsxUrlLoader_3 from './image.png';
+import postcssStyledJsxUrlLoader_2 from './font.woff2';
+import postcssStyledJsxUrlLoader_3 from './font.woff2';
 import postcssStyledJsxUrlLoader_4 from './image.png';
 import postcssStyledJsxUrlLoader_5 from './image.png';
 import postcssStyledJsxUrlLoader_6 from './image.png';
+import postcssStyledJsxUrlLoader_7 from './image.png';
+import postcssStyledJsxUrlLoader_8 from './image.png';
 import css from 'styled-jsx/css';
 
 export default css.global\`/* @styled-jsx=global */
 
+@font-face {
+  font-family: 'Font';
+  font-display: block;
+  src: url(\\"\${postcssStyledJsxUrlLoader_0}\\") format('woff2'),
+    url(\\"\${postcssStyledJsxUrlLoader_1}\\") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Font2';
+  font-display: block;
+  src: url(\\"\${postcssStyledJsxUrlLoader_2}\\") format('woff2'),
+    url(\\"\${postcssStyledJsxUrlLoader_3}\\") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 header {
-  background: lightblue url(\\"\${postcssStyledJsxUrlLoader_0}\\") no-repeat fixed center;
-  src: url(\\"\${postcssStyledJsxUrlLoader_1}\\") format('woff2'), url(\\"\${postcssStyledJsxUrlLoader_2}\\") format('woff');
+  background: lightblue url(\\"\${postcssStyledJsxUrlLoader_4}\\") no-repeat fixed center;
 }
 
 footer {
-  background: url(\\"\${postcssStyledJsxUrlLoader_3}\\");
-}
-
-main {
-  background: url(\\"\${postcssStyledJsxUrlLoader_4}\\");
-}
-
-div {
   background: url(\\"\${postcssStyledJsxUrlLoader_5}\\");
 }
 
-.class {
+main {
   background: url(\\"\${postcssStyledJsxUrlLoader_6}\\");
+}
+
+div {
+  background: url(\\"\${postcssStyledJsxUrlLoader_7}\\");
+}
+
+.class {
+  background: url(\\"\${postcssStyledJsxUrlLoader_8}\\");
 }
 
 /* .class {

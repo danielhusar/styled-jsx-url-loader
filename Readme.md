@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/danielhusar/styled-jsx-url-loader.svg?branch=master)](https://travis-ci.org/danielhusar/styled-jsx-url-loader) [![npm version](https://badge.fury.io/js/styled-jsx-url-loader.svg)](https://www.npmjs.com/package/styled-jsx-url-loader)
 
-> Webpack loader to transform `url()` inside the css or sass when using [separate files to create styled-jsx styles](https://github.com/zeit/styled-jsx#styles-in-regular-css-files). This loader needs to be used together with styled-jsx/webpack loader. It's similar to what css-loader does, but css-loader is incompatible with styled-jsx/webpack loader.
+Webpack loader to transform `url()` inside the css or sass when using [separate files to create styled-jsx styles](https://github.com/zeit/styled-jsx#styles-in-regular-css-files).\
+This loader needs to be used together with styled-jsx/webpack loader.\
+It's similar to what css-loader does, but css-loader is incompatible with styled-jsx/webpack loader.
 
 ## Installation
 

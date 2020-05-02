@@ -1,12 +1,12 @@
 {
   "name": "styled-jsx-url-loader",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Daniel Husar <dano.husar@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/danielhusar/styled-jsx-url-loader.git"
   },
-  "main": "src/index.js",
+  "main": "src/loader.js",
   "license": "MIT",
   "scripts": {
     "test": "jest --detectOpenHandles"

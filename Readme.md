@@ -31,7 +31,7 @@ config.module.rules.push({
   use: [
     options.defaultLoaders.babel,
     {
-      loader: require('styled-jsx-url-loader'),
+      loader: require.resolve('styled-jsx-url-loader'),
       options: {},
     },
     {

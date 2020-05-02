@@ -70,7 +70,8 @@ Print debug messages.
 
 ## Caveats
 
-Sass variables inside the urls are not supported. Example: `background: url(${heroImage})`. If you need to transform them, transform your sass code first to plain css.
+Sass variables inside the urls are not supported. For example: `background: url($heroImage)`.\
+If you need to transform urls with variables, transform your sass code first to plain css.
 
 There is no source maps support. (PR welcome)
 

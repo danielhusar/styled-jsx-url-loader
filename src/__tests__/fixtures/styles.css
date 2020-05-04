@@ -43,3 +43,13 @@ div {
 span {
   background: url('https://www.danielhusar.sk/image.png');
 }
+
+@keyframes slidein {
+  from {
+    background: url(./image.png);
+  }
+
+  to {
+    background: url(./image.png);
+  }
+}

@@ -13,8 +13,7 @@ export default css.global\`/* @styled-jsx=global */
 @font-face {
   font-family: 'Font';
   font-display: block;
-  src: url(\\"\${postcssStyledJsxUrlLoader_0}\\") format('woff2'),
-    url(\\"\${postcssStyledJsxUrlLoader_1}\\") format('woff');
+  src: url(\\"\${postcssStyledJsxUrlLoader_0}\\") format('woff2'), url(\\"\${postcssStyledJsxUrlLoader_1}\\") format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -22,8 +21,7 @@ export default css.global\`/* @styled-jsx=global */
 @font-face {
   font-family: 'Font2';
   font-display: block;
-  src: url(\\"\${postcssStyledJsxUrlLoader_2}\\") format('woff2'),
-    url(\\"\${postcssStyledJsxUrlLoader_3}\\") format('woff');
+  src: url(\\"\${postcssStyledJsxUrlLoader_2}\\") format('woff2'), url(\\"\${postcssStyledJsxUrlLoader_3}\\") format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -55,6 +53,16 @@ div {
 span {
   background: url('https://www.danielhusar.sk/image.png');
 }
+
+@keyframes slidein {
+  from {
+    background: url(./image.png);
+  }
+
+  to {
+    background: url(./image.png);
+  }
+}
 \`"
 `;
 
@@ -69,6 +77,8 @@ import postcssStyledJsxUrlLoader_5 from './image.png';
 import postcssStyledJsxUrlLoader_6 from './image.png';
 import postcssStyledJsxUrlLoader_7 from './image.png';
 import postcssStyledJsxUrlLoader_8 from './image.png';
+import postcssStyledJsxUrlLoader_9 from './image.png';
+import postcssStyledJsxUrlLoader_10 from './image.png';
 import css from 'styled-jsx/css';
 
 export default css.global\`/* @styled-jsx=global */
@@ -76,8 +86,7 @@ export default css.global\`/* @styled-jsx=global */
 @font-face {
   font-family: 'Font';
   font-display: block;
-  src: url(\\"\${postcssStyledJsxUrlLoader_0}\\") format('woff2'),
-    url(\\"\${postcssStyledJsxUrlLoader_1}\\") format('woff');
+  src: url(\\"\${postcssStyledJsxUrlLoader_0}\\") format('woff2'), url(\\"\${postcssStyledJsxUrlLoader_1}\\") format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -85,8 +94,7 @@ export default css.global\`/* @styled-jsx=global */
 @font-face {
   font-family: 'Font2';
   font-display: block;
-  src: url(\\"\${postcssStyledJsxUrlLoader_2}\\") format('woff2'),
-    url(\\"\${postcssStyledJsxUrlLoader_3}\\") format('woff');
+  src: url(\\"\${postcssStyledJsxUrlLoader_2}\\") format('woff2'), url(\\"\${postcssStyledJsxUrlLoader_3}\\") format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -117,6 +125,16 @@ div {
 
 span {
   background: url('https://www.danielhusar.sk/image.png');
+}
+
+@keyframes slidein {
+  from {
+    background: url(\\"\${postcssStyledJsxUrlLoader_9}\\");
+  }
+
+  to {
+    background: url(\\"\${postcssStyledJsxUrlLoader_10}\\");
+  }
 }
 \`"
 `;
